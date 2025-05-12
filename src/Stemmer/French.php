@@ -269,6 +269,16 @@ class French extends Stem
             return 3;
         }
 
+        // eur  eure   eurs   eures
+        //      delete if in R2
+        if ( ($position = $this->search(array('eur', 'eure', 'eurs', 'eures'))) !== false) {
+            if ($this->inR2($position)) {
+                $this->word = StringHelper::substr($this->word, 0, $position);
+
+            }
+            return 3;
+        }
+
         // euse   euses
         //      delete if in R2, else replace by eux if in R1
         if ( ($position = $this->search(array('euses', 'euse'))) !== false) {
