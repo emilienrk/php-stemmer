@@ -1,4 +1,5 @@
 # php-stemmer
+This repository is a fork of the original project [wamania/php-stemmer](https://github.com/wamania/php-stemmer), with adjustments to the French stemmer (notably improvements for suffixes like "eur", "eure", etc.).
 
 PHP native implementation of Snowball stemmer
 https://snowballstem.org/
@@ -32,22 +33,22 @@ Installation
 
 For PHP5, use 1.3
 ```
-composer require wamania/php-stemmer "^1.3"
+composer require emilienrk/php-stemmer "^1.3"
 ```
 
 For PHP7 use 2.x (branch 2.x is backward compatible with 1.x)
 ```
-composer require wamania/php-stemmer "^2.0"
+composer require emilienrk/php-stemmer "^2.0"
 ```
 
 For PHP^7.3 and PHP^8.0 use 3.x (backward compatible, but phpunit^9 don't work with php < 7.3)
 ```
-composer require wamania/php-stemmer "^3.0"
+composer require emilienrk/php-stemmer "^3.0"
 ```
 
 For PHP^8.4 use 4.x (avoid deprecated by switching from voku utf8 to [joomla/string](https://github.com/joomla-framework/string) )
 ```
-composer require wamania/php-stemmer "^4.0"
+composer require emilienrk/php-stemmer "^4.0"
 ```
 
 Usage
@@ -81,4 +82,3 @@ use Wamania\Snowball\French;
 $stemmer = new French();
 $stem = $stemmer->stem('anticonstitutionnellement');
 ```
-
